@@ -27,7 +27,7 @@ In class, we've started looking at recurrences and how to we can establish asymp
 
 $$ W(n) = aW(n/b) + f(n) $$
 
-where $W(1) = 1$.
+where W(1) = 1.
 
 - [ ] 1. (2 point) In `main.py`, you have stub code which includes a function `simple_work_calc`. Implement this function to return the value of $W(n)$ for arbitrary values of $a$ and $b$ with $f(n)=n$.
 
