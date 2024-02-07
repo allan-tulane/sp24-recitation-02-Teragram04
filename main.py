@@ -3,7 +3,7 @@ CMPS 2200  Recitation 2
 """
 
 ### the only imports needed are here
-import tabulate
+# import tabulate
 import time
 ###
 
@@ -17,9 +17,14 @@ def simple_work_calc(n, a, b):
 
 	Returns: the value of W(n).
 	"""
+  if n == 1:
+    return 1
+  else:
+    work = a * simple_work_calc((n // b), a, b) + n
+    return work
 
-  work = a * simple_work_calc(n // b, a, b) + n
-  pass
+
+pass
 
 
 def work_calc(n, a, b, f):
@@ -34,8 +39,14 @@ def work_calc(n, a, b, f):
 
 	Returns: the value of W(n).
 	"""
-  work = a * work_calc(n // b, a, b, f) + f(n)
-  pass
+  if n == 1:
+    return 1
+  else:
+    work = a * work_calc(n // b, a, b, f) + f(n)
+    return work
+
+
+# pass
 
 
 def span_calc(n, a, b, f):
@@ -50,7 +61,7 @@ def span_calc(n, a, b, f):
 
 	Returns: the value of W(n).
 	"""
-  span = span_calc(n // b, a, b, f) + f(n) 
+  span = span_calc(n // b, a, b, f) + f(n)
   pass
 
 
@@ -73,13 +84,13 @@ def compare_work(work_fn1,
   return result
 
 
-def print_results(results):
-  """ done """
-  print(
-      tabulate.tabulate(results,
-                        headers=['n', 'W_1', 'W_2'],
-                        floatfmt=".3f",
-                        tablefmt="github"))
+# def print_results(results):
+#   """ done """
+#   print(
+#       tabulate.tabulate(results,
+#                         headers=['n', 'W_1', 'W_2'],
+#                         floatfmt=".3f",
+#                         tablefmt="github"))
 
 
 def compare_span(span_fn1,
