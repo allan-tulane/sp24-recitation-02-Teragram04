@@ -16,8 +16,8 @@ def test_work():
   assert work_calc(20, 1, 2, lambda n: n * n) == 530
   assert work_calc(30, 3, 2, lambda n: n) == 300
   assert work_calc(27, 2, 2, lambda n: n * n) == 1299
-  #assert work_calc() ==
-  #assert work_calc() ==
+  assert work_calc(5, 2, 3, lambda n: n * n) == 27
+  assert work_calc(15, 2, 3, lambda n: n * n) == 279
 
 
 def test_compare_work():
