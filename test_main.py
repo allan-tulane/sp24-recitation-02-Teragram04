@@ -35,5 +35,12 @@ def test_compare_work():
 
 print(test_compare_work())
 
-# def test_compare_span():
-# 	# TODO
+
+def test_compare_span():
+  span_fn1 = lambda n: compare_span(n, 2, 2, lambda n: 1)
+  span_fn2 = lambda n: compare_span(n, 2, 2, lambda n: n * n)
+  res = compare_span(span_fn1, span_fn2)
+  return res
+
+
+print(test_compare_work())

@@ -42,9 +42,9 @@ where W(1) = 1.
       Then, generate actual values for W(n) for your code and confirm that the trends match your derivations.
 
 **Derived behavior:** 
-  + f(n) = 1 : n / (2^(a*b))
-  + f(n) = log n : logn / (2^(a*b))
-  + f(n) = n : n / (2^(a*b))
+  + f(n) = 1 : Constant (a and b cancel)
+  + f(n) = log n : w(logn) + n (when a and b are the same, they cancel)
+  + f(n) = n : n (if a and b are the same), otherwise it's an/b
 
 **Actual values (using work_calc(10, 2, 2, lambda n: ...)**
   + f(n) = 1: 15
@@ -62,8 +62,12 @@ let c = 3, let b = 2, let a = 10, let f(n) = n^3
 **Results (formatted as [(sizes,work_fn1,work_fn2)]**
 [(10, 1111, 4050), (20, 11111, 48500), (50, 111111, 1040050), (100, 1111111, 11400500), (1000, 1111111111, 21633005000), (5000, 1111111111111, 6326700005000), (10000, 11111111111111, 64267000050000)]
 
-When c < log_b a, it increases at a slower rate.
+When c < log_b a, it increases at a slower rate. 
 
-- [ ] 6. (3 points) W(n) is meant to represent the running time of some recursive algorithm. Suppose we always had a processors available to us and we wanted to compute the span of the same algorithm. Implement the function `span_calc` to compute the empirical span, where the work of the algorithm is given by W(n). Implement `test_compare_span` to create a new comparison function for comparing span functions. Derive the asymptotic expressions for the span of the recurrences you used in problem 4 above. Confirm that everything matches up as it should. 
+- [x] 6. (3 points) W(n) is meant to represent the running time of some recursive algorithm. Suppose we always had a processors available to us and we wanted to compute the span of the same algorithm. Implement the function `span_calc` to compute the empirical span, where the work of the algorithm is given by W(n). Implement `test_compare_span` to create a new comparison function for comparing span functions. Derive the asymptotic expressions for the span of the recurrences you used in problem 4 above. Confirm that everything matches up as it should. 
 
-**TODO: your answer goes here**
+**Derived behavior (span):** 
+  + f(n) = 1 : Constant 
+  + f(n) = log n : S(n/2) + O(logn)
+  + f(n) = n : S(n) + O(n)
+
