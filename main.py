@@ -61,8 +61,11 @@ def span_calc(n, a, b, f):
 
 	Returns: the value of W(n).
 	"""
-  span = span_calc(n // b, a, b, f) + f(n)
-  pass
+  if n == 1:
+    return 1
+  else:
+    span = span_calc(n // b, a, b, f) + f(n)
+    return span
 
 
 def compare_work(work_fn1,
